@@ -1,0 +1,1 @@
+# plugins-basic-url-shortcodes
