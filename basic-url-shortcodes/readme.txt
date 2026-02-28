@@ -2,22 +2,37 @@
 Contributors: devikas301
 Tags: rockon, shortcode, basic url, template, stylesheet, url, vs
 Requires at least: 4.0.0
-Tested up to: 6.6.2
+Tested up to: 6.9.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-BASIC URL ShortCodes plugin support for a basic short codes to use in your post/page editor that produce correct absolute URLs.
+Provides simple shortcodes to output essential WordPress URLs inside posts, pages and widgets.
 
 == Description ==
-Sometimes you want to put the base URL (that of the blog, or that of the active template) in your content editor. Times when the template customising isn't quite flexible enough.
-With this plugin you can use [home_url] to output the base URL of the blog (as set in your Settings). Or, you can use [theme_url_template] to output the URL of the active template. And You can use the [UPLOAD_URL] to output the URL of the upload folder.
+Sometimes you need to display your website's base URL, active theme URL or uploads folder URL directly inside your content editor.
 
-For example `<img src="[UPLOAD_URL]/2022/02/test.png />` in your editor might output `<img src="http://localhost/wp-demo/wp-content/uploads/2022/02/test.png" />` (if http://localhost/wp-demo is what you have configured as your blog URL in Settings).
+Basic URL Shortcodes allows you to easily insert important WordPress URLs using simple shortcodes inside posts, pages and widgets.
 
-The supported short codes are as follows:
-* [home_url] - the configured blog URL (set in Settings). E.g. http://localhost/wp-demo
-* [theme_url_template] - the URL of the active template. E.g. http://localhost/wp-demo/wp-content/themes/mytheme
-* [UPLOAD_URL] - the URL of the upload folder. E.g. http://localhost/wp-demo/wp-content/uploads
+= Available Shortcodes =
+
+**[home_url]**  
+Outputs the website’s home URL (as set in WordPress Settings).  
+Example:  
+http://localhost/wp-demo
+
+**[theme_url_template]**  
+Outputs the URL of the currently active theme (child theme supported).  
+Example:  
+http://localhost/wp-demo/wp-content/themes/mytheme
+
+**[UPLOAD_URL]**
+Outputs the base URL of the WordPress uploads directory.  
+Example:  
+http://localhost/wp-demo/wp-content/uploads
+
+These shortcodes are useful when building custom layouts, inserting dynamic links or when theme customization options are limited.
+
+Lightweight, simple and fully compatible with modern WordPress editors.
 
 == Installation ==
 
