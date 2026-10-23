@@ -2,7 +2,7 @@
 Contributors: devikas301
 Tags: shortcode, url, uploads, theme, permalink
 Requires at least: 4.0
-Tested up to: 7.0.3
+Tested up to: 7.0.4
 Requires PHP: 7.0
 Stable tag: 4.1.0
 License: GPLv3
