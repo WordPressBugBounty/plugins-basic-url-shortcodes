@@ -1,10 +1,10 @@
 === Basic URL ShortCodes ===
 Contributors: devikas301
 Tags: shortcode, url, uploads, theme, permalink
-Requires at least: 4.0
-Tested up to: 7.0.4
+Requires at least: 4.4
+Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 4.1.0
+Stable tag: 4.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -110,6 +110,11 @@ Yes. `[home_url path="search?s=hello"]` works. Absolute or off-site values are i
 
 == Changelog ==
 
+= 4.1.1 =
+* Fixed `[logout_url esc="raw"]` outputting `&amp;` instead of `&`, which broke the logout link when used from JavaScript.
+* Raised the minimum WordPress version to 4.4, required by `[rest_url]` and `[current_url]`.
+* Tested up to WordPress 7.1.
+
 = 4.1.0 =
 * Added `[site_url]`, `[parent_theme_url]`, `[content_url]`, `[plugins_url]`, `[admin_url]`, `[rest_url]`, `[login_url]`, `[logout_url]` and `[current_url]`.
 * Added a `path` attribute to every URL shortcode, with off-site values rejected.
@@ -126,6 +131,9 @@ Yes. `[home_url path="search?s=hello"]` works. Absolute or off-site values are i
 * Maintenance release.
 
 == Upgrade Notice ==
+
+= 4.1.1 =
+Fixes the raw logout URL and confirms compatibility with WordPress 7.1.
 
 = 4.1.0 =
 Adds nine new URL shortcodes plus `path` and `esc` attributes. Existing shortcodes are unchanged.

@@ -3,13 +3,13 @@
  * Plugin Name:       BASIC URL ShortCodes
  * Plugin URI:        https://wordpress.org/plugins/basic-url-shortcodes/
  * Description:       Adds [home_url], [site_url], [theme_url_template], [upload_url] and other short-codes for outputting WordPress URLs in your post/page editor.
- * Version:           4.1.0
+ * Version:           4.1.1
  * Author:            Vikas Sharma
  * Author URI:        https://profiles.wordpress.org/devikas301
  * License:           GPLv3
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       basic-url-shortcodes
- * Requires at least: 4.0
+ * Requires at least: 4.4
  * Requires PHP:      7.0
  *
  * This program is free software: you can redistribute it and/or modify
@@ -240,7 +240,11 @@ if (!function_exists('ro_burl_logout_url')) {
     {
         $atts = ro_burl_atts($atts, 'logout_url', array('redirect' => ''));
 
-        return ro_burl_out(wp_logout_url(ro_burl_redirect($atts['redirect'])), $atts);
+        // wp_logout_url() comes back HTML-encoded (&amp;), which esc="raw" would
+        // otherwise pass through and break the nonce parameter.
+        $url = wp_specialchars_decode(wp_logout_url(ro_burl_redirect($atts['redirect'])));
+
+        return ro_burl_out($url, $atts);
     }
 }
 
